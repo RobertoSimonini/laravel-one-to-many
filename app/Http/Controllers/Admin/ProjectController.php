@@ -79,10 +79,10 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $request->validate([
-            'title' => ['string', 'required', 'unique:projects', 'max:50'],
+            'title' => ['string', 'required', 'max:50'],
             'image' => ['file', 'required'],
             'description' => ['string', 'required'],
-            'full_code' => ['string', 'required', 'unique:projects',],
+            'full_code' => ['string', 'required',],
             'techonologies_used' => ['string', 'required'],
         ]);
 
