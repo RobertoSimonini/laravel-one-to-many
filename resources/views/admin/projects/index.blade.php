@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Projects')
+
 @section('content')
 <body class="bg-dark">
     <div class="container">
@@ -14,7 +16,7 @@
             @foreach ($projects as $project)
             <div class="col-4">
                 <div class="card text-center">
-                    <img src="{{asset('storage/' . $project->image)}}" class="card-img-top" alt="{{$project->title}}">
+                    <img src="{{asset('storage/' . $project->image)}}" class="card-img-top img-fluid" alt="{{$project->title}}">
 
                     {{-- Contenuto della card  --}}
                     <div class="card-body">

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Details')
+
 @section('content')
+<body class="bg-dark">
 
 <header>
     <h1 class="text-success text-center my-5"> 
@@ -8,13 +11,14 @@
     </h1>
 </header>
 
+
 <div class="container">
 
     {{-- Card --}}
     <div class="card h-100 mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="{{asset('storage/' . $project->image)}}" class="img-fluid rounded-start" alt="...">
+            <img src="{{asset('storage/' . $project->image)}}" class="img-fluid rounded-start h-100" alt="...">
           </div>
           <div class="col-md-8 text-center">
             <div class="card-body">
@@ -23,6 +27,10 @@
               <p class="card-text">{{$project->description}}</p>
               <h4 class="mb-3">Techonolgies:</h4>
               <p class="card-text">{{$project->techonologies_used}}</p>
+              @if ($project->type)
+              <h4 class="mb-3">Type</h4>
+              <span class="badge text-bg-dark">{{$project->type->name}}</span>
+              @endif
             </div>
           </div>
         </div>
@@ -45,6 +53,8 @@
           </div>
       </div>
 </div>
+
+</body>
 @endsection
 
 @section('scripts')
